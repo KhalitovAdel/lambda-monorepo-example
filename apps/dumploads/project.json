@@ -1,0 +1,52 @@
+{
+    "root": "apps/dumploads",
+    "sourceRoot": "apps/dumploads/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/node:build",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/apps/dumploads",
+                "main": "apps/dumploads/src/main.ts",
+                "tsConfig": "apps/dumploads/tsconfig.app.json",
+                "assets": ["apps/dumploads/src/assets"]
+            },
+            "configurations": {
+                "production": {
+                    "optimization": true,
+                    "extractLicenses": true,
+                    "inspect": false,
+                    "fileReplacements": [
+                        {
+                            "replace": "apps/dumploads/src/environments/environment.ts",
+                            "with": "apps/dumploads/src/environments/environment.prod.ts"
+                        }
+                    ]
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nrwl/node:execute",
+            "options": {
+                "buildTarget": "dumploads:build"
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/dumploads/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/apps/dumploads"],
+            "options": {
+                "jestConfig": "apps/dumploads/jest.config.js",
+                "passWithNoTests": true
+            }
+        }
+    },
+    "tags": []
+}

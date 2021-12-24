@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "projects": {
+        "dumploads": "apps/dumploads",
+        "generated": "packages/generated",
+        "project-dumpload": "apps/project-dumpload",
+        "projects": "apps/projects"
+    },
+    "options": {
+        "externalDependencies": "none"
+    }
+}

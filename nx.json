@@ -1,0 +1,37 @@
+{
+    "extends": "@nrwl/workspace/presets/core.json",
+    "npmScope": "kek",
+    "implicitDependencies": {
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        ".github/workflows/ci.yml": "*"
+    },
+    "affected": {
+        "defaultBase": "main"
+    },
+    "workspaceLayout": {
+        "libsDir": "packages"
+    },
+    "cli": {
+        "defaultCollection": "@nrwl/nest"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/workspace/tasks-runners/default",
+            "options": {
+                "cacheableOperations": ["build", "lint", "test", "e2e"]
+            }
+        }
+    },
+    "defaultProject": "projects",
+    "targetDependencies": {
+        "build": [
+            {
+                "target": "build",
+                "projects": "dependencies"
+            }
+        ]
+    }
+}

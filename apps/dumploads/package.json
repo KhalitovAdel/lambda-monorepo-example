@@ -1,0 +1,7 @@
+{
+    "name": "dumploads", 
+    "version": "0.0.110",
+    "devDependencies": {
+        "serverless-plugin-optimize": "^4.2.1-rc.1"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "eslint.debug": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.format.enable": true,
+    "eslint.lintTask.options": "${workspaceFolder}/.eslintrc.js"
+}
